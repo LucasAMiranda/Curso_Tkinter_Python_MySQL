@@ -1,4 +1,3 @@
-# -*- coding: cp1252 -*-
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
@@ -17,6 +16,15 @@ tk.Label(tela, image=tkimage).pack()
 
 def clientes():
     exec(open(r"./clientes.py").read(), locals())
+
+def produtos():
+    exec(open(r"./produtos.py").read(), locals())
+
+def vendas():
+    exec(open(r"./vendas.py").read(), locals())
+
+def acessos():
+    exec(open(r"./acessos.py").read(), locals())
     
 def sobre():
     messagebox.showinfo("Sobre", "Sistema Comercial 1.0")
@@ -34,9 +42,9 @@ menu_ajuda = tk.Menu(barramenu)
 
 barramenu.add_cascade(label="Funcionalidades", menu=menu_func)
 menu_func.add_command(label="Clientes", command=clientes)
-menu_func.add_command(label="Produtos/Serviços")
-menu_func.add_command(label="Vendas")
-menu_func.add_command(label="Gestão de Acessos")
+menu_func.add_command(label="Produtos/Serviços", command=produtos)
+menu_func.add_command(label="Vendas", command=vendas)
+menu_func.add_command(label="Gestão de Acessos", command=acessos)
 menu_func.add_separator()
 menu_func.add_command(label="Sair", command=sair)
 
